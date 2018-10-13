@@ -18,6 +18,9 @@ public class Searchlight : MonoBehaviour
     private IEnumerator turnRedCoroutine;
     private IEnumerator turnWhiteCoroutine;
 
+    private IEnumerator decreaseSpeedCoroutine;
+    private IEnumerator increaseSpeedCoroutine;
+
     // Use this for initialization
     void Start()
     {
@@ -59,6 +62,16 @@ public class Searchlight : MonoBehaviour
                 turnRedCoroutine = turnRed();
                 StartCoroutine(turnRedCoroutine);
             }
+            if (increaseSpeedCoroutine != null)
+            {
+                player.StopCoroutine(increaseSpeedCoroutine);
+                increaseSpeedCoroutine = null;
+            }
+            if (decreaseSpeedCoroutine == null)
+            {
+                decreaseSpeedCoroutine = player.decreaseSpeed();
+                player.StartCoroutine(decreaseSpeedCoroutine);
+            }
         }
     }
 
@@ -86,6 +99,16 @@ public class Searchlight : MonoBehaviour
             {
                 turnWhiteCoroutine = turnWhite();
                 StartCoroutine(turnWhiteCoroutine);
+            }
+            if (decreaseSpeedCoroutine != null)
+            {
+                player.StopCoroutine(decreaseSpeedCoroutine);
+                decreaseSpeedCoroutine = null;
+            }
+            if (increaseSpeedCoroutine == null)
+            {
+                increaseSpeedCoroutine = player.increaseSpeed();
+                player.StartCoroutine(increaseSpeedCoroutine);
             }
         }
     }

@@ -14,8 +14,17 @@ public class player : MonoBehaviour {
     private int paranoiaMin = 0;
     private int paranoiaMax = 100;
 
-	// Use this for initialization
-	void Start () {
+    public float speed = 2.8f;
+    private float maxSpeed = 2.8f;
+    private float minSpeed = 1.4f;
+    private float speedDecreaseTimer = 0.1f;
+    private float speedDecreaseIncrement = 0.3f;
+    private float speedIncreaseTimer = 0.1f;
+    private float speedIncreaseIncrement = 0.3f;
+
+
+    // Use this for initialization
+    void Start () {
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
@@ -25,7 +34,6 @@ public class player : MonoBehaviour {
         
 	}
     public float yRot=0;
-    public const float speed = 2.8f;
 	// Update is called once per frame
 	void Update () {
         Vector3 h = Input.GetAxis("Horizontal") * transform.right;
@@ -95,5 +103,35 @@ public class player : MonoBehaviour {
 
             yield return new WaitForSeconds(paranoiaDecreaseTimer);
         }
+    }
+
+    public IEnumerator decreaseSpeed()
+    {
+        Debug.Log("decreaseSpeed() called.");
+        while (speed > minSpeed)
+        {
+            speed -= speedDecreaseIncrement;
+            if (speed < minSpeed)
+            {
+                speed = minSpeed;
+            }
+            yield return new WaitForSeconds(speedDecreaseTimer);
+        }
+        yield break;
+    }
+
+    public IEnumerator increaseSpeed()
+    {
+        Debug.Log("increaseSpeed() called.");
+        while (speed < maxSpeed)
+        {
+            speed += speedIncreaseIncrement;
+            if (speed > maxSpeed)
+            {
+                speed = maxSpeed;
+            }
+            yield return new WaitForSeconds(speedIncreaseTimer);
+        }
+        yield break;
     }
 }

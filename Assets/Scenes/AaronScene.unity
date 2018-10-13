@@ -343,7 +343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health: 100'
+  m_Text: 'Paranoia: 0'
 --- !u!222 &420582287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c25537fdf796d498fa3c2ca1e8cb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 420582286}
+  paranoiaText: {fileID: 420582286}
 --- !u!1 &502149732
 GameObject:
   m_ObjectHideFlags: 0

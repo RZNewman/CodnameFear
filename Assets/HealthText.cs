@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthText : MonoBehaviour {
     
-    public Text healthText;
+    public Text paranoiaText;
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +15,9 @@ public class HealthText : MonoBehaviour {
 	void Update () {
 	}
 
-    public void UpdateHealth(int health)
+    public void UpdateHealth(int paranoia)
     {
-        Debug.Log("UpdateHealth(): Called with health " + health);
-        healthText.text = "Health: " + health;
+        Debug.Log("UpdateHealth(): Called with paranoia " + paranoia);
+        paranoiaText.text = "Paranoia: " + paranoia;
     }
 }
