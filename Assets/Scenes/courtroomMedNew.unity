@@ -2176,7 +2176,7 @@ Prefab:
         type: 2}
       propertyPath: door
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1676306754}
     - target: {fileID: 4419922841782740, guid: a845fafcde3743b43b84f47a967fc3c6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 3.08
@@ -3500,6 +3500,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1676306754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1596554997949500, guid: 515a9cf5026f4d245a884aad3e4954a3,
+    type: 2}
+  m_PrefabInternal: {fileID: 476648683}
 --- !u!1001 &1808646629
 Prefab:
   m_ObjectHideFlags: 0

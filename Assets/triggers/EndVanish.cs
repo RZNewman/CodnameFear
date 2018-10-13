@@ -30,8 +30,8 @@ public class EndVanish : MonoBehaviour {
                 Destroy(manq);
                 
             }
-            door.transform.localPosition = new Vector3(2, 0, -2);
-            door.transform.localRotation = Quaternion.LookRotation(Vector3.left);
+            //door.transform.localPosition = new Vector3(2, 0, -2);
+            //door.transform.localRotation = Quaternion.LookRotation(Vector3.left);
             trigger1 = true;
         }
     }
