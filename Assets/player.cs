@@ -41,7 +41,10 @@ public class player : MonoBehaviour {
         Vector3 h = Input.GetAxis("Horizontal") * transform.right;
         Vector3 v  = Input.GetAxis("Vertical") * transform.forward;
         Vector3 vel = (h + v).normalized * speed*Time.deltaTime;
-
+        if (!cc.isGrounded)
+        {
+            vel += new Vector3(0, -3, 0);
+        }
         cc.Move(vel);
         //rb.velocity = vel;
         yRot+= Input.GetAxis("Mouse X");
