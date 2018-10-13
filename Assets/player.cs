@@ -7,7 +7,12 @@ public class player : MonoBehaviour {
     CharacterController cc;
     public HealthText healthText;
 
-    public int paranoia = 100;
+    public int paranoia = 0;
+    private float paranoiaIncreaseTimer = 0.2f;
+    private int paranoiaDecreaseIncrement = 1;
+    private float paranoiaDecreaseTimer = 1.0f;
+    private int paranoiaMin = 0;
+    private int paranoiaMax = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -48,5 +53,47 @@ public class player : MonoBehaviour {
         }
         healthText.UpdateHealth(paranoia);
         return paranoia;
+    }
+
+    public IEnumerator increaseParanoia(int paranoiaStep)
+    {
+        // While the player is in a spotlight, this coroutine continually increases the paranoia.
+        // Uses values set from the spotlight.
+        Debug.Log("increaseParanoia coroutine started with step " + paranoiaStep);
+        while (true)
+        {
+            // Increases player's paranoia and update the UI.
+            paranoia += paranoiaStep;
+            healthText.UpdateHealth(paranoia);
+            // If reach the maximum, TODO: Cause death! :o
+            if (paranoia > paranoiaMax)
+            {
+                paranoia = paranoiaMax;
+                yield break;
+            }
+
+            yield return new WaitForSeconds(paranoiaIncreaseTimer);
+        }
+    }
+
+    public IEnumerator decreaseParanoia()
+    {
+        // While the player is not in a spotlight, this coroutine continually decreases the paranoia until min level.
+        // Uses values set by the Player class.
+        Debug.Log("decreaseParanoia coroutine started.");
+        while (true)
+        {
+            // Decreases player's paranoia and update the UI.
+            paranoia -= paranoiaDecreaseIncrement;
+            healthText.UpdateHealth(paranoia);
+            // If reach the minimum, we can stop the coroutine.
+            if (paranoia <= paranoiaMin)
+            {
+                paranoia = paranoiaMin;
+                yield break;
+            }
+
+            yield return new WaitForSeconds(paranoiaDecreaseTimer);
+        }
     }
 }

@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 326868457}
   - component: {fileID: 326868458}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: Searchlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,8 +220,8 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 200
-  m_Range: 20
+  m_Intensity: 15
+  m_Range: 30
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -268,12 +268,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 326868454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 713c3105bdb950f49bf2ab7ce2d0ae34, type: 3}
+  m_Script: {fileID: 11500000, guid: f0d80ad36c828df499db55256ce01da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerComponent: {fileID: 0}
-  damage: 1
+  player: {fileID: 0}
   light: {fileID: 326868456}
+  damage: 1
+  redCounter: 0
 --- !u!1 &420582284
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,8 +362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c25537fdf796d498fa3c2ca1e8cb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerComponent: {fileID: 0}
-  playerHealth: 0
   healthText: {fileID: 420582286}
 --- !u!1 &502149732
 GameObject:
@@ -443,19 +442,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4313598359005982, guid: f5104651ebbe2384ea6b00c8055c92f4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.00000667572
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4313598359005982, guid: f5104651ebbe2384ea6b00c8055c92f4, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4313598359005982, guid: f5104651ebbe2384ea6b00c8055c92f4, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4313598359005982, guid: f5104651ebbe2384ea6b00c8055c92f4, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4313598359005982, guid: f5104651ebbe2384ea6b00c8055c92f4, type: 2}
       propertyPath: m_LocalRotation.w
@@ -463,7 +462,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4313598359005982, guid: f5104651ebbe2384ea6b00c8055c92f4, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114674540009676616, guid: f5104651ebbe2384ea6b00c8055c92f4,
         type: 2}
@@ -482,7 +481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351373527}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: Searchlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -674,7 +673,7 @@ RectTransform:
   m_Children:
   - {fileID: 420582285}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

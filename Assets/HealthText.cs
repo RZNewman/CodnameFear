@@ -17,6 +17,7 @@ public class HealthText : MonoBehaviour {
 
     public void UpdateHealth(int health)
     {
+        Debug.Log("UpdateHealth(): Called with health " + health);
         healthText.text = "Health: " + health;
     }
 }
