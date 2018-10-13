@@ -21,7 +21,6 @@ public class DetectPlayer : MonoBehaviour {
         Debug.Log("OnTriggerStay(): Called with collider " + other);
         if (other.gameObject.CompareTag("Player"))
         {
-            
             other.gameObject.GetComponent<player>().detectedBySpotlight(damage);
         }
     }

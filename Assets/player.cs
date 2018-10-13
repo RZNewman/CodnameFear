@@ -5,6 +5,7 @@ using UnityEngine;
 public class player : MonoBehaviour {
     Rigidbody rb;
     CharacterController cc;
+    public HealthText healthText;
 
     public int paranoia = 100;
 
@@ -13,6 +14,9 @@ public class player : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+
+        // Set default values for UI.
+        healthText.UpdateHealth(paranoia);
         
 	}
     public float yRot=0;
@@ -33,13 +37,14 @@ public class player : MonoBehaviour {
     public void detectedBySpotlight(int damage)
     {
         Debug.Log("detectedBySpotlight(): Called with damage " + damage);
-        // Don't calculate damage if we are already calculating it currently (i.e. if there are multiple overlapping spotlights).
+        // Maybe later: don't calculate damage if we are already calculating it currently (i.e. if there are multiple overlapping spotlights).
         
         paranoia -= damage;
         if (paranoia < 0)
         {
             paranoia = 0;
         }
+        healthText.UpdateHealth(paranoia);
         
     }
 }
