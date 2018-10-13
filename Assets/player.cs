@@ -5,11 +5,19 @@ using UnityEngine;
 public class player : MonoBehaviour {
     Rigidbody rb;
     CharacterController cc;
+    public HealthText healthText;
+
+    public int paranoia = 100;
+
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+
+        // Set default values for UI.
+        healthText.UpdateHealth(paranoia);
+        
 	}
     public float yRot=0;
     public const float speed = 2.8f;
@@ -24,5 +32,19 @@ public class player : MonoBehaviour {
         yRot+= Input.GetAxis("Mouse X");
         yRot = yRot % 360;
         transform.rotation = Quaternion.Euler(0, yRot, 0);
+    }
+
+    public void detectedBySpotlight(int damage)
+    {
+        Debug.Log("detectedBySpotlight(): Called with damage " + damage);
+        // Maybe later: don't calculate damage if we are already calculating it currently (i.e. if there are multiple overlapping spotlights).
+        
+        paranoia -= damage;
+        if (paranoia < 0)
+        {
+            paranoia = 0;
+        }
+        healthText.UpdateHealth(paranoia);
+        
     }
 }
