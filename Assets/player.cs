@@ -9,13 +9,20 @@ public class player : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
 	}
-    const float speed = 2.5f;
+    public float yRot=0;
+    public const float speed = 4.5f;
 	// Update is called once per frame
 	void Update () {
-        Vector3 h = Input.GetAxis("Horizontal") * Vector3.right;
-        Vector3 v  = Input.GetAxis("Vertical") * Vector3.forward;
+        Vector3 h = Input.GetAxis("Horizontal") * transform.right;
+        Vector3 v  = Input.GetAxis("Vertical") * transform.forward;
         Vector3 vel = (h + v).normalized * speed*Time.deltaTime;
+
         cc.Move(vel);
+        //rb.velocity = vel;
+        yRot+= Input.GetAxis("Mouse X");
+        yRot = yRot % 360;
+        transform.rotation = Quaternion.Euler(0, yRot, 0);
     }
 }
