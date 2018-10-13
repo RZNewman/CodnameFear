@@ -9,6 +9,9 @@ public class JuryMove : MonoBehaviour {
     public Vector3 offset;
     public GameObject movePos;
     public GameObject door;
+    public GameObject gavelObj;
+    public Mesh point;
+    AudioSource gavel;
     bool trigger1 = false;
     bool trigger2 = false;
     bool completed = false;
@@ -19,6 +22,7 @@ public class JuryMove : MonoBehaviour {
     {
         theJury = GameObject.FindGameObjectsWithTag("jury");
         baliff = GameObject.FindGameObjectWithTag("bailiff");
+        gavel = gavelObj.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class JuryMove : MonoBehaviour {
             if (timer <= 0)
             {
                 //Gavel Sound
+                gavel.Play();
                 completed = true;
                 Debug.Log("Gavel");
             }
@@ -48,6 +53,7 @@ public class JuryMove : MonoBehaviour {
                     Vector3 diff = player.transform.position - manq.transform.position;
                     diff.y = 0;
                     manq.transform.rotation = Quaternion.LookRotation(diff);
+                    manq.GetComponent<MeshFilter>().mesh = point;
                 }
                 baliff.transform.position = movePos.transform.position;
                 baliff.transform.rotation = movePos.transform.rotation;

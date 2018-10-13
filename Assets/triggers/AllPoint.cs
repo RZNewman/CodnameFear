@@ -10,6 +10,7 @@ public class AllPoint : MonoBehaviour {
     public GameObject door;
     public GameObject point;
     public GameObject gavelObj;
+    public Mesh pointMesh;
     AudioSource gavel;
     bool trigger1 = false;
     bool trigger2 = false;
@@ -54,6 +55,7 @@ public class AllPoint : MonoBehaviour {
                 Vector3 diff = point.transform.position - manq.transform.position;
                 diff.y = 0;
                 manq.transform.rotation = Quaternion.LookRotation(diff);
+                manq.GetComponent<MeshFilter>().mesh = pointMesh;
             }
             baliff.transform.position = movePos.transform.position;
             baliff.transform.rotation = movePos.transform.rotation;

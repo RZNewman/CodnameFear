@@ -6,6 +6,7 @@ public class publicStand : MonoBehaviour {
     GameObject[] thePublic;
     public Vector3 offset;
     bool triggered = false;
+    public Mesh stand;
 	// Use this for initialization
 	void Start () {
         thePublic = GameObject.FindGameObjectsWithTag("public");
@@ -22,6 +23,7 @@ public class publicStand : MonoBehaviour {
             foreach (GameObject manq in thePublic)
             {
                 manq.transform.position += offset;
+                manq.GetComponent<MeshFilter>().mesh = stand;
             }
             triggered = true;
         }
