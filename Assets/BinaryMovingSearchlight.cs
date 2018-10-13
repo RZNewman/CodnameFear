@@ -8,6 +8,9 @@ public class BinaryMovingSearchlight : MonoBehaviour
     public player player;
     public Animator binaryMovingSearchlightAC;
 
+    public Vector3 point1;
+    public Vector3 point2;
+
     // Use this for initialization
     void Start()
     {
