@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour {
     Rigidbody rb;
@@ -22,7 +23,6 @@ public class player : MonoBehaviour {
     private float speedIncreaseTimer = 0.1f;
     private float speedIncreaseIncrement = 0.3f;
 
-
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -31,8 +31,10 @@ public class player : MonoBehaviour {
 
         // Set default values for UI.
         healthText.UpdateHealth(paranoia);
+
         
-	}
+
+    }
     public float yRot=0;
 	// Update is called once per frame
 	void Update () {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Searchlight : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class Searchlight : MonoBehaviour
 
     private IEnumerator decreaseSpeedCoroutine;
     private IEnumerator increaseSpeedCoroutine;
+
+    public FOVImage fovImage;
+    private IEnumerator decreaseFOVCoroutine;
+    private IEnumerator increaseFOVCoroutine;
 
     // Use this for initialization
     void Start()
@@ -72,6 +77,16 @@ public class Searchlight : MonoBehaviour
                 decreaseSpeedCoroutine = player.decreaseSpeed();
                 player.StartCoroutine(decreaseSpeedCoroutine);
             }
+            if (increaseFOVCoroutine != null)
+            {
+                fovImage.StopCoroutine(increaseFOVCoroutine);
+                increaseFOVCoroutine = null;
+            }
+            if (decreaseFOVCoroutine == null)
+            {
+                decreaseFOVCoroutine = fovImage.decreaseFOV();
+                fovImage.StartCoroutine(decreaseFOVCoroutine);
+            }
         }
     }
 
@@ -109,6 +124,16 @@ public class Searchlight : MonoBehaviour
             {
                 increaseSpeedCoroutine = player.increaseSpeed();
                 player.StartCoroutine(increaseSpeedCoroutine);
+            }
+            if (decreaseFOVCoroutine != null)
+            {
+                fovImage.StopCoroutine(decreaseFOVCoroutine);
+                decreaseFOVCoroutine = null;
+            }
+            if (increaseFOVCoroutine == null)
+            {
+                increaseFOVCoroutine = fovImage.increaseFOV();
+                fovImage.StartCoroutine(increaseFOVCoroutine);
             }
         }
     }
