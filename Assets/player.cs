@@ -12,7 +12,7 @@ public class player : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
 	}
     public float yRot=0;
-    public const float speed = 4.5f;
+    public const float speed = 2.8f;
 	// Update is called once per frame
 	void Update () {
         Vector3 h = Input.GetAxis("Horizontal") * transform.right;
