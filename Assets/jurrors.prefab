@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4071987870973444}
   - component: {fileID: 33149442404401964}
   - component: {fileID: 23142805444020230}
+  - component: {fileID: 65047027520605384}
   m_Layer: 0
   m_Name: jurrors
   m_TagString: Untagged
@@ -34,9 +35,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243276859711420}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1390967, y: 0.5, z: 11.878626}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 6.38, y: 0.49, z: 9.840013}
+  m_LocalScale: {x: 0.013974, y: 0.013974, z: 0.013974}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1243276859711420}
   m_Mesh: {fileID: 4300000, guid: 80b1282c27864134ea2ce1a12a245bde, type: 3}
+--- !u!65 &65047027520605384
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1243276859711420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 430.15567, y: 161.73068, z: 302.78235}
+  m_Center: {x: 0, y: 81.278915, z: -103.70027}
