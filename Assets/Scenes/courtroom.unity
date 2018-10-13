@@ -1059,6 +1059,10 @@ Prefab:
       propertyPath: m_Name
       value: Full Court
       objectReference: {fileID: 0}
+    - target: {fileID: 1596554997949500, guid: 515a9cf5026f4d245a884aad3e4954a3, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 515a9cf5026f4d245a884aad3e4954a3, type: 2}
   m_IsPrefabAsset: 0
