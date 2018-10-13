@@ -9,6 +9,8 @@ public class AllPoint : MonoBehaviour {
     public GameObject movePos;
     public GameObject door;
     public GameObject point;
+    public GameObject gavelObj;
+    AudioSource gavel;
     bool trigger1 = false;
     bool trigger2 = false;
     float timer = 0;
@@ -19,6 +21,7 @@ public class AllPoint : MonoBehaviour {
     {
         all = GameObject.FindGameObjectsWithTag("all");
         baliff = GameObject.FindGameObjectWithTag("bailiff");
+        gavel = gavelObj.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class AllPoint : MonoBehaviour {
             if (timer <= 0)
             {
                 //Gavel Sound
+                gavel.Play();
                 strikes--;
                 if (strikes > 0)
                 {
