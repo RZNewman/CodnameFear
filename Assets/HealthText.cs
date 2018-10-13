@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthText : MonoBehaviour {
-
+    
     public Text healthText;
 
 	// Use this for initialization
@@ -13,7 +13,6 @@ public class HealthText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       
 	}
 
     public void UpdateHealth(int health)

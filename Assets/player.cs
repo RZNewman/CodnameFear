@@ -34,8 +34,10 @@ public class player : MonoBehaviour {
         transform.rotation = Quaternion.Euler(0, yRot, 0);
     }
 
-    public void detectedBySpotlight(int damage)
+    public int detectedBySpotlight(int damage)
     {
+        // Function returns updated paranoia after we account for the damage.
+
         Debug.Log("detectedBySpotlight(): Called with damage " + damage);
         // Maybe later: don't calculate damage if we are already calculating it currently (i.e. if there are multiple overlapping spotlights).
         
@@ -45,6 +47,6 @@ public class player : MonoBehaviour {
             paranoia = 0;
         }
         healthText.UpdateHealth(paranoia);
-        
+        return paranoia;
     }
 }

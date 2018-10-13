@@ -268,10 +268,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 326868454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c89c5d61604ba6b4bb15872c1d41fef7, type: 3}
+  m_Script: {fileID: 11500000, guid: 713c3105bdb950f49bf2ab7ce2d0ae34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerComponent: {fileID: 0}
   damage: 1
+  light: {fileID: 326868456}
 --- !u!1 &420582284
 GameObject:
   m_ObjectHideFlags: 0
