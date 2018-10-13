@@ -8,7 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AaronScene.unity
     guid: ef6235b179ff2594db25a7d51969fc2b
+  - enabled: 1
+    path: Assets/Scenes/courtroom.unity
+    guid: 645b7a8bc75b9184aaf1b15f1452705e
+  - enabled: 1
+    path: Assets/Scenes/Jail.unity
+    guid: 8183e5b5682cbdb4c84b092de418eb0d
+  - enabled: 1
+    path: Assets/Scenes/courtroomMedNew.unity
+    guid: 729ef5872732819409bdec02112c5673
+  - enabled: 1
+    path: Assets/Scenes/EscapeScene.unity
+    guid: e6de745bad516bd448aeb0dabdf4b7c2
+  - enabled: 1
+    path: Assets/Scenes/CourtEndNEw.unity
+    guid: c4e3d0ae64916e5408c5d562635eead6
   m_configObjects: {}
